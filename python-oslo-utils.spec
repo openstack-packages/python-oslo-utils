@@ -19,7 +19,7 @@ Requires:       python-oslo-i18n
 Requires:       python-babel
 Requires:       python-iso8601
 Requires:       python-six
-Requires:       python-netifaces
+Requires:       python-netifaces >= 0.10.4
 
 %description
 The OpenStack Oslo Utility library.
