@@ -1,0 +1,11 @@
+diff --git a/setup.cfg b/setup.cfg
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -22,6 +22,7 @@
+ [files]
+ packages = 
+ 	oslo
++	oslo.utils
+ 	oslo_utils
+ namespace_packages = 
+ 	oslo
