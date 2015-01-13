@@ -11,8 +11,6 @@ URL:            http://launchpad.net/oslo
 Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
-Patch0001: 0001-utils-setup.cfg-fix.patch
-
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 
@@ -43,8 +41,6 @@ Documentation for the Oslo database handling library.
 
 %prep
 %setup -q -n %{pypi_name}-%{upstream_version}
-
-%patch0001 -p1
 
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
