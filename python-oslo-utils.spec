@@ -20,6 +20,7 @@ Requires:       python-babel
 Requires:       python-iso8601
 Requires:       python-six
 Requires:       python-netifaces >= 0.10.4
+Requires:       python-debtcollector >= 0.3.0
 
 %description
 The OpenStack Oslo Utility library.
