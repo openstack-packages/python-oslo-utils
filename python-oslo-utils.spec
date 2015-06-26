@@ -3,7 +3,7 @@
 
 Name:           python-oslo-utils
 Version:        XXX
-Release:        XXX{?dist}
+Release:        XXX
 Summary:        OpenStack Oslo Utility library
 
 License:        ASL 2.0
@@ -19,6 +19,7 @@ Requires:       python-oslo-i18n
 Requires:       python-babel
 Requires:       python-iso8601
 Requires:       python-six
+Requires:       python-netaddr >= 0.7.12
 Requires:       python-netifaces >= 0.10.4
 Requires:       python-debtcollector >= 0.3.0
 
@@ -30,21 +31,22 @@ The OpenStack Oslo Utility library.
 
 
 %package doc
-Summary:    Documentation for the Oslo database handling library
+Summary:    Documentation for the Oslo Utility library
 Group:      Documentation
 
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
+# for API autodoc
+BuildRequires:  python-netifaces
+BuildRequires:  python-debtcollector
 
 %description doc
-Documentation for the Oslo database handling library.
+Documentation for the Oslo Utility library.
 
 
 %prep
 %setup -q -n %{pypi_name}-%{upstream_version}
 
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
 # Let RPM handle the dependencies
 rm -f requirements.txt
 
@@ -63,24 +65,15 @@ rm -rf html/.{doctrees,buildinfo}
 
 
 %files
-%doc README.rst LICENSE
+%doc README.rst
+%license LICENSE
 %{python2_sitelib}/oslo
 %{python2_sitelib}/oslo_utils
 %{python2_sitelib}/*.egg-info
 %{python2_sitelib}/*-nspkg.pth
 
 %files doc
-%doc html LICENSE
+%doc html
+%license LICENSE
 
 %changelog
-* Sun Sep 21 2014 Alan Pevec <alan.pevec@redhat.com> 1.0.0-1
-- Update to upstream 1.0.0
-
-* Thu Sep 11 2014 Alan Pevec <apevec@redhat.com> - 0.3.0-1
-- update to 0.3.0
-
-* Wed Aug 20 2014 Alan Pevec <apevec@redhat.com> - 0.2.0-1
-- update to 0.2.0
-
-* Thu Jul 31 2014 Alan Pevec <apevec@redhat.com> - 0.1.1-1
-- Initial package.
