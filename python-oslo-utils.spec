@@ -18,10 +18,11 @@ Requires:       python-oslo-config
 Requires:       python-oslo-i18n
 Requires:       python-babel
 Requires:       python-iso8601
-Requires:       python-six
+Requires:       python-six >= 1.9.0
 Requires:       python-netaddr >= 0.7.12
 Requires:       python-netifaces >= 0.10.4
 Requires:       python-debtcollector >= 0.3.0
+Requires:       pytz
 
 %description
 The OpenStack Oslo Utility library.
