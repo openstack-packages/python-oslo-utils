@@ -1,4 +1,3 @@
-# Created by pyp2rpm-1.1.0b
 %global pypi_name oslo.utils
 
 Name:           python-oslo-utils
@@ -23,6 +22,8 @@ Requires:       python-netaddr >= 0.7.12
 Requires:       python-netifaces >= 0.10.4
 Requires:       python-debtcollector >= 0.3.0
 Requires:       pytz
+Requires:       python-monotonic
+
 
 %description
 The OpenStack Oslo Utility library.
@@ -40,6 +41,8 @@ BuildRequires:  python-oslo-sphinx
 # for API autodoc
 BuildRequires:  python-netifaces
 BuildRequires:  python-debtcollector
+BuildRequires:  python-oslo-i18n
+BuildRequires:  python-netaddr
 
 %description doc
 Documentation for the Oslo Utility library.
@@ -49,7 +52,7 @@ Documentation for the Oslo Utility library.
 %setup -q -n %{pypi_name}-%{upstream_version}
 
 # Let RPM handle the dependencies
-rm -f requirements.txt
+rm -f {test-,}requirements.txt
 
 
 %build
@@ -68,10 +71,8 @@ rm -rf html/.{doctrees,buildinfo}
 %files
 %doc README.rst
 %license LICENSE
-%{python2_sitelib}/oslo
 %{python2_sitelib}/oslo_utils
 %{python2_sitelib}/*.egg-info
-%{python2_sitelib}/*-nspkg.pth
 
 %files doc
 %doc html
