@@ -12,6 +12,10 @@ BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
+# Required for documentation building
+BuildRequires:  python-iso8601
+BuildRequires:  python-monotonic
+BuildRequires:  pytz
 
 Requires:       python-oslo-config
 Requires:       python-oslo-i18n
