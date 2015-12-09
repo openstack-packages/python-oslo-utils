@@ -11,6 +11,7 @@ Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_na
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
+BuildRequires:  python-funcsigs
 BuildRequires:  python-pbr
 # Required for documentation building
 BuildRequires:  python-iso8601
@@ -20,6 +21,7 @@ BuildRequires:  pytz
 Requires:       python-oslo-config
 Requires:       python-oslo-i18n
 Requires:       python-babel
+Requires:       python-funcsigs
 Requires:       python-iso8601
 Requires:       python-six >= 1.9.0
 Requires:       python-netaddr >= 0.7.12
