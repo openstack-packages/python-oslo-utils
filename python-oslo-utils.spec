@@ -8,8 +8,8 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-oslo-utils
-Version:        XXX
-Release:        XXX
+Version:        3.7.0
+Release:        1%{?dist}
 Summary:        OpenStack Oslo Utility library
 
 License:        ASL 2.0
@@ -186,3 +186,6 @@ rm -rf html/.{doctrees,buildinfo}
 %{python2_sitelib}/oslo_utils/tests
 
 %changelog
+* Tue Mar 22 2016 Haikel Guemar <hguemar@fedoraproject.org> 3.7.0-
+- Update to 3.7.0
+
